@@ -2,6 +2,7 @@ from turtle import Turtle
 
 
 class Ball(Turtle):
+    '''Ball's Motion'''
     def __init__(self):
         super().__init__()
         self.penup()
