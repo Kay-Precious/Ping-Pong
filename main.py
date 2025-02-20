@@ -4,6 +4,7 @@ from ball import Ball
 import time
 from scoreboard import ScoreBoard
 
+# Screen Set-up
 screen = Screen()
 screen.setup(800, 600)
 screen.bgcolor("black")
@@ -11,6 +12,7 @@ screen.title("Pong")
 screen.listen()
 screen.tracer(0)
 
+# Paddles and Ball
 r_paddle = Paddle(+1)
 l_paddle = Paddle(-1)
 ball = Ball()
@@ -23,7 +25,7 @@ screen.onkey(r_paddle.go_down, "Down")
 screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
-game_is_on = True
+game_is_on = True                   # Switch on/off
 while game_is_on:
     time.sleep(ball.move_speed)
     screen.update()
@@ -44,9 +46,6 @@ while game_is_on:
     if ball.xcor() < -390:
         ball.reset_position()
         score.r_point()
-
-
-
 
 
 screen.exitonclick()
